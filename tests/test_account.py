@@ -31,9 +31,9 @@ def test_address_form_for_country(country):
     rules = i18naddress.get_validation_rules({"country_code": country})
     required = rules.required_fields
     if "street_address" in required:
-        assert "street_address_1" in errors
-    else:
         assert "street_address_1" not in errors
+    else:
+        assert "street_address_1" in errors
     if "city" in required:
         assert "city" in errors
     else:
